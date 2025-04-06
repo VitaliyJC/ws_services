@@ -3,7 +3,7 @@
 1. Установите и запустите docker
 2. Перейдите в директорию ws_services
 
-3.1. 
+3. 
 Запуск под bash
 ```bash
 ./manage.sh build && ./manage.sh up && ./manage.sh logs
@@ -13,7 +13,12 @@
 ./manage.bat build && ./manage.bat up && ./manage.bat logs
 ```
 
-4. 
+4. В браузере переходим по адресу и регистрируемся.
+```bash
+http://localhost/
+```
+
+5. 
 Остановка контейнеров под bash
 ```bash
 ./manage.sh down
