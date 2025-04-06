@@ -1,0 +1,16 @@
+services:
+  ws_nginx:
+    build:
+      context: ../ws_nginx
+      dockerfile: Dockerfile
+    container_name: ws_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - ws_api
+    networks:
+      - ws-network
+
+networks:
+  ws-network:

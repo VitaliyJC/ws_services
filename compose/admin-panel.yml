@@ -1,0 +1,16 @@
+services:
+  ws_admin-panel:
+    build:
+      context: ../ws_admin-panel
+      dockerfile: Dockerfile
+    container_name: ws_admin-panel
+    restart: unless-stopped
+    depends_on:
+      - ws_api
+    # env_file:
+    #   - ../ws_admin-panel/.env
+    networks:
+      - ws-network
+
+networks:
+  ws-network:

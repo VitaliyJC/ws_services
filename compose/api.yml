@@ -1,0 +1,17 @@
+services:
+  ws_api:
+    build:
+      context: ../ws_api
+      dockerfile: Dockerfile
+    container_name: ws_api
+    restart: unless-stopped
+    depends_on:
+      ws_postgresql:
+        condition: service_healthy
+    # env_file:
+    #   - ../ws_api/.env
+    networks:
+      - ws-network
+
+networks:
+  ws-network:
